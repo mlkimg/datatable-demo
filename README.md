@@ -23,7 +23,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 *This text will be italic*
 _This will also be italic_
 
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/asset/logo.png)
 Format: ![Alt Text](url)
 
 ## 鼠标移动到某一行数据高亮

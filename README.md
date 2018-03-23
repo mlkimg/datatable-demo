@@ -23,7 +23,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 *This text will be italic*
 _This will also be italic_
 
-(/images/logo.png)
+![](src/assets/logo.png)
 
 
 ## 鼠标移动到某一行数据高亮
@@ -50,7 +50,7 @@ _This will also be italic_
 ### 当鼠标移动到某数据的时候，将那行数据的ID传到方法，执行高亮。
 
 
-(/images/heightLight.png)
+![](src/assets/heightLight.png)
 
 
 
@@ -124,7 +124,7 @@ _This will also be italic_
 ```
 
 
-(/images/onRowCheckboxClick.png)
+![](src/assets/onRowCheckboxClick.png)
 
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,7 +148,7 @@ _This will also be italic_
 ```
 
 
-(/images/onRowExpanderClick.png)
+![](src/assets/onRowExpanderClick.png)
 
 
 
@@ -241,8 +241,8 @@ _This will also be italic_
 
 
 
-![用前效果](/images/mouseMoveOnColumn1.png)
-！[用后效果](/images/mouseMoveOnColumn2.png)
+![用前效果](src/assets/mouseMoveOnColumn1.png)
+![用后效果](src/assets/mouseMoveOnColumn2.png)
 
 
 
@@ -279,7 +279,7 @@ _This will also be italic_
 
 
 
-(/images/onSortOrderChanged.png)
+![](src/assets/onSortOrderChanged.png)
 
 
 
@@ -313,7 +313,7 @@ _This will also be italic_
 ### 实现列筛选器输入更改监听。
 
 
-(/images/onFilterInputChanged.png)
+![](src/assets/onFilterInputChanged.png)
 
 
 
@@ -331,7 +331,7 @@ _This will also be italic_
 ```
 
 
-(/images/onColumnGroupExpandStateChanged.png)
+![](src/assets/onColumnGroupExpandStateChanged.png)
 
 
 

@@ -23,8 +23,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 *This text will be italic*
 _This will also be italic_
 
-![GitHub Logo](src/assets/logo.png)
-Format: ![Alt Text](url)
+(/images/logo.png)
+
 
 ## 鼠标移动到某一行数据高亮
 ### 在BodyTable.vue里循环数据的<tr>标签内添加@mouseenter="onRowMouseenter(row)" @mouseleave="onRowMouseleave(row)"，
@@ -48,6 +48,11 @@ Format: ![Alt Text](url)
       },
 ```
 ### 当鼠标移动到某数据的时候，将那行数据的ID传到方法，执行高亮。
+
+
+(/images/heightLight.png)
+
+
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -118,6 +123,10 @@ Format: ![Alt Text](url)
       }
 ```
 
+
+(/images/onRowCheckboxClick.png)
+
+
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## 选择数据
@@ -139,7 +148,12 @@ Format: ![Alt Text](url)
 ```
 
 
+(/images/onRowExpanderClick.png)
+
+
+
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 ## 自由改变数据表每一列的宽度
@@ -227,6 +241,11 @@ Format: ![Alt Text](url)
 
 
 
+![用前效果](/images/mouseMoveOnColumn1.png)
+！[用后效果](/images/mouseMoveOnColumn2.png)
+
+
+
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -260,6 +279,10 @@ Format: ![Alt Text](url)
 
 
 
+(/images/onSortOrderChanged.png)
+
+
+
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -290,6 +313,10 @@ Format: ![Alt Text](url)
 ### 实现列筛选器输入更改监听。
 
 
+(/images/onFilterInputChanged.png)
+
+
+
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -302,6 +329,10 @@ Format: ![Alt Text](url)
         this.columnGroupExpandedState = {...state}
       }
 ```
+
+
+(/images/onColumnGroupExpandStateChanged.png)
+
 
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

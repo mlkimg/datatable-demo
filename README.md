@@ -29,8 +29,7 @@ Format: ![Alt Text](url)
 ## 鼠标移动到某一行数据高亮
 ### 在BodyTable.vue里循环数据的<tr>标签内添加@mouseenter="onRowMouseenter(row)" @mouseleave="onRowMouseleave(row)"，
 ### 再添加
-`
-methods: {
+`methods: {
 	onRowMouseenter (row) {
         this.$emit('mouseover-on-row', { row })
       },
@@ -41,8 +40,7 @@ methods: {
 `
 ### 在Datatable.vue的<body-table>内添加@mouseover-on-row="onRowMouseover"和@mouseleave-on-row="onRowMouseleave"进行监听，
 ### 再在methods里添加：
-`
-	onRowMouseover ({ row }) {
+`	onRowMouseover ({ row }) {
         this.mouseoverRowId = row.id
       },
       onRowMouseleave ({ row }) {
@@ -56,8 +54,7 @@ methods: {
 
 ## 点击打开数据的下一级数据
 ### 在BodyTable.vue里<td>标签内添加@click="onRowCheckboxClick(row, $event)"，然后再methods里添加：
-`
-	onRowCheckboxClick (row, event) {
+`	onRowCheckboxClick (row, event) {
         if (event.target) {
           $(event.target).blur()
         }
@@ -125,15 +122,13 @@ methods: {
 
 ## 选择数据
 ### 在BodyTable.vue里<expender>标签内添加@click="onRowExpanderClick(row)"，然后再methods里添加：
-`
-	onRowExpanderClick (row) {
+`	onRowExpanderClick (row) {
         this.$emit('row-expander-click', { row })
       }
 `
 ### 在Datatable.vue的<body-table>内添加@row-expander-click="onRowExpanderClick"进行监听，
 ### 再在methods里添加：
-`
-	onRowExpanderClick ({ row }) {
+`	onRowExpanderClick ({ row }) {
         let isRowExpanded = this.expandedRowIds[row.id]
         if (!isRowExpanded) {
           this.$set(this.expandedRowIds, row.id, true)
@@ -150,8 +145,7 @@ methods: {
 ## 自由改变数据表每一列的宽度
 ### 在HeaderTable.vue里两个<header-cell>标签内（分开2个不同的模板）添加@mouse-move="mouseMoveOnColumn(column, $event)"，
 ### @mouse-down="mouseDownOnColumn(column, $event)"，@mouse-out="mouseOutOfColumn(column, $event)"，然后再methods里添加：
-`
-	mouseMoveOnColumn (column, event) {
+`	mouseMoveOnColumn (column, event) {
         if (!this.isColumnResizable(column)) {
           return
         }
@@ -242,8 +236,7 @@ methods: {
 ### 在HeaderTable.vue里两个<header-cell>标签内（分开2个不同的模板）添加@column-sort-order-changed="$emit('column-sort-order-changed', $event)"，
 ### 在Datatable.vue中的两个<header-table>标签内添加@column-sort-order-changed="onSortOrderChanged"，进行排序监听
 ### 然后在methods里添加：
-`
-	onSortOrderChanged ({ column, sortOrder }) {
+`	onSortOrderChanged ({ column, sortOrder }) {
         // this.$emit('sort-order-changed', { column, sortOrder })
         this.sortOrders = []
         let originalSortOrderIdx = this.sortOrders.findIndex(({ field }) => field === column.field)
@@ -272,8 +265,7 @@ methods: {
 
 ## 列筛选器组件添加及列筛选器输入更改监听
 ### 在column.js找到想要添加组件的列，添加filter："text"，或者代码中添加：
-`
-	{
+`	{
     type: 'text' // possible values are 'text', 'single-select', 'multi-select', 'date', 'date-range'
     options: {...} // options for filter configuration
     mannual: false
@@ -284,8 +276,7 @@ methods: {
 `
 ### 来添加列筛选器组件，然后在HeaderTable.vue的两个<header-cell>标签内添加@column-filter-input-changed="$emit('column-filter-input-changed', $event)"，进行列筛选器输入更改监听
 ### 最后在Datatable.vue的<header-table>标签中添加@column-filter-input-changed="onFilterInputChanged"，再在methods中添加：
-`
-	onFilterInputChanged ({ column, filterInput }) {
+`	onFilterInputChanged ({ column, filterInput }) {
         this.$set(this.filterInputs, column.field, {
           filter: column.filter,
           input: filterInput
@@ -307,8 +298,7 @@ methods: {
 ### 在HeaderTable.vue中的<header-cell>标签中添加@column-group-expand-state-changed="$emit('column-group-expand-state-changed', $event)"，
 ### 再去Datatable.vue中的<header-table>标签中添加@column-group-expand-state-changed="onColumnGroupExpandStateChanged"，进行监听
 ### 最后在methods内添加：
-`
-	onColumnGroupExpandStateChanged ({ state }) {
+`	onColumnGroupExpandStateChanged ({ state }) {
         this.columnGroupExpandedState = {...state}
       }
 `
@@ -320,8 +310,7 @@ methods: {
 
 
 ### 若想隐藏某列可添加：
-`
-	column.hidden ={hidden:"true"}  
+`	column.hidden ={hidden:"true"}  
 	//隐藏为false
 `
 
@@ -329,8 +318,7 @@ methods: {
 
 
 ### 改变排序类型
-`
-	column.sortOrder={sortOrder: 'normal'}
+`	column.sortOrder={sortOrder: 'normal'}
 	//possible values are 'normal', 'asc' and 'desc'
 `
 
@@ -341,8 +329,7 @@ methods: {
 
 ### 改变选择类型
 ### 在return的datatableOptions里添加：
-`
-	selectionMode: 'multiple'
+`	selectionMode: 'multiple'
 	//possible values are 'none', 'single' and 'multiple'
 `
 
@@ -353,8 +340,7 @@ methods: {
 
 ### 改变数据表显示的高度
 ### 在return的datatableOptions里添加：
-`
-	height: 300
+`	height: 300
 	//改数值改变高度px
 `
 
@@ -366,8 +352,7 @@ methods: {
 
 ### 改变数据表每一行高度
 ### 在return的datatableOptions里添加：
-`
-	rowHeight: 24 // must be >= 24
+`	rowHeight: 24 // must be >= 24
 `
 ### 若rowHeight少于24，排序会错乱
 
@@ -378,8 +363,7 @@ methods: {
 
 
 ### 选中数据高亮
-`
-	highlightRowOnSelected：false
+`	highlightRowOnSelected：false
 `
 ### 默认是false，若选中数据将其改为true
 
@@ -390,8 +374,7 @@ methods: {
 
 
 ### 启用列组展开折叠
-`
-	enableColumnGroupExpandCollapse: false
+`	enableColumnGroupExpandCollapse: false
 `
 ### 默认是false，关闭的，当点击展开的时候改为true
 
@@ -402,8 +385,7 @@ methods: {
 
 
 ### 修改查询没有记录显示的字体
-`
-	noRecordsDisplayMessage: 'No records to display'
+`	noRecordsDisplayMessage: 'No records to display'
 `
 ### 输入想修改的字进行修改
 
@@ -415,8 +397,7 @@ methods: {
 
 
 ### 修改当前页，每行显示数据数量
-`
-	paginationOptions: {
+`	paginationOptions: {
     currentPage: 1,
     rowsPerPage: 10,
     rowsPerPageOptions: [10, 20, 50],
